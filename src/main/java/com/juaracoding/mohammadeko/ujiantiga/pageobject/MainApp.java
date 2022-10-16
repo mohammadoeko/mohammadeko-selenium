@@ -2,6 +2,7 @@ package com.juaracoding.mohammadeko.ujiantiga.pageobject;
 
 import com.juaracoding.mohammadeko.ujiantiga.pageobject.drivers.DriverSingleton;
 import com.juaracoding.mohammadeko.ujiantiga.pageobject.pages.AddCart;
+import com.juaracoding.mohammadeko.ujiantiga.pageobject.pages.Dashboard;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import com.juaracoding.mohammadeko.ujiantiga.pageobject.pages.Login;
@@ -15,12 +16,17 @@ public class MainApp {
         WebDriver driver = DriverSingleton.getDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
+        Dashboard dashboard = new Dashboard();
         Register register = new Register();
         Login login = new Login();
         AddCart addCart = new AddCart();
 
-        // Register Account
+        // Dashboard
         driver.get(Constants.URL);
+        dashboard.dashboard();
+
+        // Register Account
+        driver.get(Constants.URL_LOGIN);
         register.registerForm("Mohammad Eko", "mohammadeko@email.com", "Rumahku1234!");
 
         driver.navigate().back();
