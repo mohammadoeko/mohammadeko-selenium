@@ -1,7 +1,7 @@
-package com.juaracoding.mohammadeko.ujiantiga.pageobject.drivers.strategies;
+package com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.drivers.strategies;
 
 
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.utils.Constants;
+import com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.utils.Constants;
 
 public class DriverStrategyImplementer {
     public static DriverStrategy chooseStrategy(String strategy) {

@@ -1,13 +1,10 @@
-package com.juaracoding.mohammadeko.ujiantiga.pageobject;
+package com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject;
 
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.drivers.DriverSingleton;
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.pages.AddCart;
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.pages.Dashboard;
+import com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.drivers.DriverSingleton;
+import com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.pages.*;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.pages.Login;
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.pages.Register;
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.utils.Constants;
+import com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.utils.Constants;
 
 public class MainApp {
 
@@ -16,14 +13,11 @@ public class MainApp {
         WebDriver driver = DriverSingleton.getDriver();
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
-        Dashboard dashboard = new Dashboard();
         Register register = new Register();
         Login login = new Login();
         AddCart addCart = new AddCart();
-
-        // Dashboard
-        driver.get(Constants.URL);
-        dashboard.dashboard();
+        Search search = new Search();
+        Wishlist wishlist = new Wishlist();
 
         // Register Account
         driver.get(Constants.URL_LOGIN);
@@ -38,12 +32,20 @@ public class MainApp {
         //Item list one product
         driver.get(Constants.URL_SHOP);
         js.executeScript("window.scrollBy(0,550)");
-        addCart.shopItem();
+        addCart.shopItemDetail();
 
-        // Add item in cart
+        // Add item to cart
         driver.get(Constants.URL_DETAIL_SHOP);
         js.executeScript("window.scrollBy(0,500)");
         addCart.addToCart();
+
+        driver.get("https://shop.demoqa.com/cart/");
+        search.searchItem();
+
+        driver.get("https://shop.demoqa.com/?s=dress&post_type=product");
+        js.executeScript("window.scrollBy(0,550)");
+        wishlist.btnWishlishProduct();
+
 
         try {
             Thread.sleep(5000);
@@ -51,6 +53,6 @@ public class MainApp {
             throw new RuntimeException(e);
         }
 
-        driver.quit();
+//        driver.quit();
     }
 }

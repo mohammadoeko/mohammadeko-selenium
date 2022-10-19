@@ -1,6 +1,6 @@
-package com.juaracoding.mohammadeko.ujiantiga.pageobject.pages;
+package com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.pages;
 
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.drivers.DriverSingleton;
+import com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.drivers.DriverSingleton;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -35,7 +35,27 @@ public class AddCart {
     @FindBy(id = "nav-menu-item-cart")
     WebElement btnViewCart;
 
-    public void shopItem() {
+    @FindBy(xpath = "//*[@id=\"product-1162\"]/div[1]/div[2]/h1")
+    WebElement txtItemDetail;
+
+    @FindBy(xpath = "//a[normalize-space()='Black Cross Back Maxi Dress - Black']")
+    WebElement txtAddCartItem;
+
+    @FindBy(xpath = "//a[normalize-space()='Orders']")
+    WebElement clickMenuOrders;
+
+    @FindBy(xpath = "//a[@class='woocommerce-Button button']")
+    WebElement btnBrowseProducts;
+
+
+    public void clickMenuOrders() {
+        clickMenuOrders.click();
+        System.out.println("Click menu orders");
+        btnBrowseProducts.click();
+        System.out.println("Clikc button browse products");
+    }
+
+    public void shopItemDetail() {
         clickItem.click();
         System.out.println("Click Item");
     }
@@ -57,5 +77,13 @@ public class AddCart {
         System.out.println("Click icon cart");
         js.executeScript("window.scrollBy(0,500)");
 
+    }
+
+    public String getTxtItemDetail() {
+        return txtItemDetail.getText();
+    }
+
+    public String getTxtAddCartItem() {
+        return txtAddCartItem.getText();
     }
 }

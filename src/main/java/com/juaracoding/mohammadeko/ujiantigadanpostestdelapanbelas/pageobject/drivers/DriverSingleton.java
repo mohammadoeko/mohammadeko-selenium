@@ -1,9 +1,9 @@
-package com.juaracoding.mohammadeko.ujiantiga.pageobject.drivers;
+package com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.drivers;
 
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.drivers.strategies.DriverStrategy;
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.drivers.strategies.DriverStrategyImplementer;
+import com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.drivers.strategies.DriverStrategy;
+import com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.drivers.strategies.DriverStrategyImplementer;
 import org.openqa.selenium.WebDriver;
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.utils.Constants;
+import com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.utils.Constants;
 
 import java.util.concurrent.TimeUnit;
 

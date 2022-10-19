@@ -1,4 +1,4 @@
-package com.juaracoding.mohammadeko.ujiantiga.pageobject.drivers.strategies;
+package com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.drivers.strategies;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;

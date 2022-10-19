@@ -1,6 +1,6 @@
-package com.juaracoding.mohammadeko.ujiantiga.pageobject.pages;
+package com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.pages;
 
-import com.juaracoding.mohammadeko.ujiantiga.pageobject.drivers.DriverSingleton;
+import com.juaracoding.mohammadeko.ujiantigadanpostestdelapanbelas.pageobject.drivers.DriverSingleton;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -29,6 +29,10 @@ public class Login {
     @FindBy(xpath = "//*[@id=\"customer_login\"]/div[1]/form/p[3]/button")
     WebElement btnLogin;
 
+    @FindBy(xpath = "//h1[@class='page-title']")
+    WebElement txtMyAccount;
+
+
     public void loginForm(String email, String password) {
         this.usernameLogin.sendKeys(email);
         System.out.println("insert username or email login");
@@ -37,5 +41,9 @@ public class Login {
         visiblePassword.click();
         checklistRememberme.click();
         btnLogin.click();
+    }
+
+    public String getTxtMyAccount() {
+        return txtMyAccount.getText();
     }
 }
